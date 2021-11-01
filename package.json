@@ -24,7 +24,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "yarn prettier:check && eslint --ext js,jsx",
+    "prettier:check": "prettier --check 'src/**/*.{js,jsx}'",
+    "prettier:write": "prettier --write 'src/**/*.{js,jsx}'"
   },
   "eslintConfig": {
     "extends": [
