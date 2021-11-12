@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
-import { format } from 'date-fns';
 
 import { TextField } from '@mui/material';
 
@@ -20,7 +19,7 @@ const defaultProps = {
 };
 
 const DatePickerFormik = ({ name, label, isRequired, validators, ...otherProps }) => {
-  const enhancedValidators = [...validators, ...(isRequired ? [isRequiredValidator] : [])];
+  const enhancedValidators = [...(isRequired ? [isRequiredValidator] : []), ...validators];
 
   return (
     <Field name={name} validate={validateField(enhancedValidators)}>
@@ -32,8 +31,7 @@ const DatePickerFormik = ({ name, label, isRequired, validators, ...otherProps }
           <DatePicker
             {...formikProps.field}
             onChange={(value) => {
-              const formattedDate = format(new Date(value), 'MM/dd/yyyy');
-              formikProps.form.setFieldValue(name, formattedDate);
+              formikProps.form.setFieldValue(name, value);
             }}
             label={label}
             variant="outlined"

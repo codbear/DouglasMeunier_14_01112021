@@ -5,21 +5,30 @@ import TextFieldFormik from '../TextFieldFormik';
 import { MenuItem } from '@mui/material';
 
 const propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  options: PropTypes.arrayOf(PropTypes.string),
+  children: PropTypes.node,
 };
 
-const SelectFormik = ({ options, ...otherProps }) => {
+const defaultProps = {
+  options: null,
+  children: null,
+};
+
+const SelectFormik = ({ options, children, ...otherProps }) => {
   return (
     <TextFieldFormik select {...otherProps} defaultValue="">
-      {options.map((option) => (
-        <MenuItem key={option} value={option}>
-          {option}
-        </MenuItem>
-      ))}
+      {options &&
+        options.map((option) => (
+          <MenuItem key={option} value={option}>
+            {option}
+          </MenuItem>
+        ))}
+      {children}
     </TextFieldFormik>
   );
 };
 
 SelectFormik.propTypes = propTypes;
+SelectFormik.defaultProps = defaultProps;
 
 export default SelectFormik;

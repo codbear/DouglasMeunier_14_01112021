@@ -20,7 +20,7 @@ const defaultProps = {
 };
 
 const TextFieldFormik = ({ name, label, type, isRequired, validators, ...otherProps }) => {
-  const enhancedValidators = [...validators, ...(isRequired ? [isRequiredValidator] : [])];
+  const enhancedValidators = [...(isRequired ? [isRequiredValidator] : []), ...validators];
 
   return (
     <Field name={name} validate={validateField(enhancedValidators)}>
