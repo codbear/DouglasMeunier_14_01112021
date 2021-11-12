@@ -1,11 +1,15 @@
-import { Router } from './router';
 import { LocalizationProvider } from '@mui/lab';
 import DateAdapter from '@mui/lab/AdapterDateFns';
+
+import { Router } from './router';
+import Layout from './components/Layout';
 
 const App = () => {
   return (
     <LocalizationProvider dateAdapter={DateAdapter}>
-      <Router />
+      <Layout>
+        <Router />
+      </Layout>
     </LocalizationProvider>
   );
 };
