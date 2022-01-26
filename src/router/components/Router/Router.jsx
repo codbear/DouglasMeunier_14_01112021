@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import ROUTES from '../../constants/routes';
 import { EmployeeCreateScreen, EmployeeListScreen } from '../../../screens';
 
 const Router = () => (
-  <BrowserRouter>
+  <HashRouter>
     <Switch>
       <Route exact path={ROUTES.EMPLOYEE.CREATE}>
         <EmployeeCreateScreen />
@@ -13,7 +13,7 @@ const Router = () => (
         <EmployeeListScreen />
       </Route>
     </Switch>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default Router;
