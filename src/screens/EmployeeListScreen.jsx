@@ -5,6 +5,7 @@ import { Table } from '@codbear/reactable';
 import { getEmployees } from '../services';
 import Layout from '../components/Layout';
 import { ROUTES } from '../router';
+import { useState } from 'react';
 
 const columns = [
   {
@@ -56,6 +57,7 @@ const columns = [
 
 const EmployeeListScreen = () => {
   const employees = getEmployees();
+  const [itemsPerPage, setItemsPerPage] = useState(25);
 
   return (
     <Layout
@@ -70,7 +72,13 @@ const EmployeeListScreen = () => {
           Current Employees
         </Typography>
 
-        <Table data={employees} columns={columns} hasSearchBar />
+        <Table
+          data={employees}
+          columns={columns}
+          hasSearchBar
+          itemsPerPage={itemsPerPage}
+          onChangeItemsPerPage={setItemsPerPage}
+        />
       </Card>
     </Layout>
   );
