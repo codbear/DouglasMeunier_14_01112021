@@ -1,11 +1,11 @@
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, Typography } from '@mui/material';
 import { Table } from '@codbear/reactable';
 
-import { getEmployees } from '../services';
 import Layout from '../components/Layout';
 import { ROUTES } from '../router';
-import { useState } from 'react';
+import { EmployeesContext } from '../contexts';
 
 const columns = [
   {
@@ -56,7 +56,7 @@ const columns = [
 ];
 
 const EmployeeListScreen = () => {
-  const employees = getEmployees();
+  const { employees } = useContext(EmployeesContext);
   const [itemsPerPage, setItemsPerPage] = useState(25);
 
   return (

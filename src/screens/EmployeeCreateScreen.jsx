@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Formik, Form } from 'formik';
 import {
@@ -13,17 +13,19 @@ import {
   DialogTitle,
 } from '@mui/material';
 
-import { isDate, isZipCode, saveEmployee } from '../services';
+import { isDate, isZipCode } from '../services';
 import { STATES } from '../constants';
 import TextFieldFormik from '../components/TextFieldFormik';
 import DatePickerFormik from '../components/DatePickerFormik';
 import SelectFormik from '../components/SelectFormik';
 import { ROUTES } from '../router';
 import Layout from '../components/Layout';
+import { EmployeesContext } from '../contexts';
 
 const EmployeeCreateScreen = () => {
   const history = useHistory();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { saveEmployee } = useContext(EmployeesContext);
 
   const handleCloseModal = () => setIsModalOpen(false);
 
