@@ -56,7 +56,7 @@ const columns = [
 ];
 
 const EmployeeListScreen = () => {
-  const {employees} = useContext(EmployeesContext);
+  const { employees } = useContext(EmployeesContext);
   const [itemsPerPage, setItemsPerPage] = useState(25);
 
   return (
