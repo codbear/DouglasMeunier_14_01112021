@@ -1277,10 +1277,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@codbear/reactable@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@codbear/reactable/-/reactable-1.0.2.tgz#4e31c5e78cf47169d4d1b37e9429cbe5f90133ac"
-  integrity sha512-sAhur++5dTcDwGdnMTA5cT+vGj3bAwEKnbpJ2IyQtrt+Yp8bACWE/tPNZ1JYbTzopw2wuWroVk4oMjU4mdinYA==
+"@codbear/reactable@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@codbear/reactable/-/reactable-1.0.3.tgz#700e4214b30c6233d74a4d7cd2495a7d08c9e506"
+  integrity sha512-SoVqMTcMF4QRbD75xXFjCGvHS+Vh5iptks4sqlGbf3G3X57GyjvjH3mFS/i8Ml1QorCBXceTW1omGqN/Ig3GFQ==
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
